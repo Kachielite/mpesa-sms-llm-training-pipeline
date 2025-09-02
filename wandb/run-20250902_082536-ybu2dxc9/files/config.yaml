@@ -1,0 +1,59 @@
+_wandb:
+    value:
+        cli_version: 0.21.3
+        e:
+            d9ltiievmmb4igfjx6fqrr5r9cngo16r:
+                apple:
+                    ecpuCores: 2
+                    gpuCores: 16
+                    memoryGb: 16
+                    name: Apple M1 Pro
+                    pcpuCores: 8
+                    ramTotalBytes: "17179869184"
+                    swapTotalBytes: "4294967296"
+                codePath: run_training.py
+                codePathLocal: run_training.py
+                cpu_count: 10
+                cpu_count_logical: 10
+                disk:
+                    /:
+                        total: "994662584320"
+                        used: "450745085952"
+                email: derrick.onyekachi@gmail.com
+                executable: /Users/derrickmadumere/PycharmProjects/mpesa-sms-llm-training-pipeline/.venv/bin/python
+                git:
+                    commit: e2c11b654b8325c2206960449d770d1a19d204e3
+                    remote: git@github.com:Kachielite/mpesa-sms-llm-training-pipeline.git
+                host: Kachis-MacBook-Pro.local
+                memory:
+                    total: "17179869184"
+                os: macOS-15.6.1-arm64-arm-64bit-Mach-O
+                program: /Users/derrickmadumere/PycharmProjects/mpesa-sms-llm-training-pipeline/run_training.py
+                python: CPython 3.13.2
+                root: /Users/derrickmadumere/PycharmProjects/mpesa-sms-llm-training-pipeline
+                startedAt: "2025-09-02T05:25:36.686144Z"
+                writerId: d9ltiievmmb4igfjx6fqrr5r9cngo16r
+        m: []
+        python_version: 3.13.2
+        t:
+            "1":
+                - 1
+                - 11
+                - 49
+                - 51
+                - 71
+                - 84
+                - 98
+            "2":
+                - 1
+                - 11
+                - 49
+                - 51
+                - 71
+                - 84
+                - 98
+            "4": 3.13.2
+            "5": 0.21.3
+            "6": 4.45.2
+            "12": 0.21.3
+            "13": darwin-arm64

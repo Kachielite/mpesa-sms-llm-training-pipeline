@@ -1,0 +1,34 @@
+{
+  "os":  "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "python":  "CPython 3.13.2",
+  "startedAt":  "2025-09-02T04:55:01.806877Z",
+  "program":  "notebooks/training.ipynb",
+  "git":  {
+    "remote":  "git@github.com:Kachielite/mpesa-sms-llm-training-pipeline.git",
+    "commit":  "6a86fbee7d4700c34705cc1a1d453292f4779b33"
+  },
+  "email":  "derrick.onyekachi@gmail.com",
+  "root":  "/Users/derrickmadumere/PycharmProjects/mpesa-sms-llm-training-pipeline/notebooks",
+  "host":  "Kachis-MacBook-Pro.local",
+  "executable":  "/Users/derrickmadumere/PycharmProjects/mpesa-sms-llm-training-pipeline/.venv/bin/python",
+  "cpu_count":  10,
+  "cpu_count_logical":  10,
+  "disk":  {
+    "/":  {
+      "total":  "994662584320",
+      "used":  "441837559808"
+    }
+  },
+  "memory":  {
+    "total":  "17179869184"
+  },
+  "apple":  {
+    "name":  "Apple M1 Pro",
+    "ecpuCores":  2,
+    "pcpuCores":  8,
+    "gpuCores":  16,
+    "memoryGb":  16,
+    "ramTotalBytes":  "17179869184"
+  },
+  "writerId":  "ih35mih4p8aie9tc1ho81jruyg3ep011"
+}

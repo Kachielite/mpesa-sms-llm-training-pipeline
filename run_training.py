@@ -44,7 +44,7 @@ def main():
 
     # Load and prepare data
     print("📚 Loading and preparing MPESA SMS data...")
-    DATA_PATH = "output/mpesa_basic.jsonl"
+    DATA_PATH = "output/mpesa_basic_fixed.jsonl"  # Use the fixed dataset!
 
     if not os.path.exists(DATA_PATH):
         raise FileNotFoundError(f"Data file not found: {DATA_PATH}")
@@ -183,24 +183,32 @@ def main():
 
     # Quick inference test
     print("🧪 Running quick inference test...")
-    from transformers import pipeline
 
-    gen = pipeline(
-        "text-generation",
-        model=trainer.model,
-        tokenizer=tokenizer,
-        device_map="auto",
-        torch_dtype=dtype,
-    )
-
+    # Use the model directly instead of pipeline for PEFT models
     sample = (
         "### Task: Extract transaction details from the SMS\n"
         "### Input:\nQFC3D45G7 Confirmed. You have received Ksh500 from Customer_1 XXXXXXX on 12/08/24 at 11:32 AM. New M-PESA balance is Ksh1,250.\n"
         "### Output:\n"
     )
 
-    out = gen(sample, max_new_tokens=150, do_sample=False)
-    output_text = out[0]["generated_text"][len(sample):]
+    # Tokenize input
+    inputs = tokenizer(sample, return_tensors="pt")
+    if torch.backends.mps.is_available():
+        inputs = {k: v.to("mps") for k, v in inputs.items()}
+
+    # Generate response
+    with torch.no_grad():
+        outputs = trainer.model.generate(
+            **inputs,
+            max_new_tokens=150,
+            temperature=0.1,
+            do_sample=True,
+            pad_token_id=tokenizer.eos_token_id,
+            eos_token_id=tokenizer.eos_token_id,
+        )
+
+    # Decode output
+    output_text = tokenizer.decode(outputs[0][inputs['input_ids'].shape[1]:], skip_special_tokens=True)
 
     print("\n🎯 Inference Test Result:")
     print("-" * 50)
